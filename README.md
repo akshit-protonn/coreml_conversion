@@ -5,3 +5,4 @@
 [colab notebook](https://colab.research.google.com/drive/1wx07Vt5lCFqy1S83d3mK33eZsII-_pN_?usp=sharing)
 ## verify inference on desktop
 `convert.ipynb`
+## mkbhd image source: [video](https://www.youtube.com/watch?v=f4g2nPY-VZc)

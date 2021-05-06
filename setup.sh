@@ -19,3 +19,9 @@ conda install -c conda-forge matplotlib
 # remove environment
 conda deactivate
 conda env remove -n coremltools-env
+
+# fetch test video samples
+brew install youtube-dl
+youtube-dl -f 134 -o "mkbhd_m1.%(ext)s" "https://www.youtube.com/watch?v=f4g2nPY-VZc"
+brew install ffmpeg
+ffmpeg -ss 00:00:14 -t 00:00:10 -i mkbhd_m1.mp4 -async 1 mkbhd_m1_clip.mp4
