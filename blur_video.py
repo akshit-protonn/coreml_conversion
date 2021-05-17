@@ -2,6 +2,7 @@ import cv2 as cv
 import numpy as np
 import coremltools as ct
 import matplotlib.pyplot as plt
+import datetime
 
 class ImageSegmentor:
     def __init__(self):
@@ -116,6 +117,8 @@ class ImageSegmentor:
         # seconds_to_process = 1
         # frames_to_process = int(input_fps*seconds_to_process)
 
+        start_time = datetime.datetime.now()
+
         # bring to front
         while (input_video.isOpened()):
             _, frame = input_video.read()
@@ -157,7 +160,9 @@ class ImageSegmentor:
             # define q as the exit button
             if cv.waitKey(25) & 0xFF == ord('q'):
                 break
-            
+        exec_time = datetime.datetime.now() - start_time
+        print("execution time: {}".format(exec_time.total_seconds()))
+
         input_video.release()
         blurred_video.release()
         if self.do_plot:
